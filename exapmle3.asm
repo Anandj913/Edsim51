@@ -1,0 +1,21 @@
+start:
+SETB P3.3
+SETB P3.4
+MOV P1, #11111001B
+CALL delay
+CLR P3.3
+MOV P1, #10100100B
+CALL delay
+CLR P3.4
+SETB P3.3
+MOV P1, #10110000B
+CALL delay
+CLR P3.3
+MOV P1, #10011001B
+Call delay
+JMP start
+
+delay:
+MOV R0, #200
+DJNZ R0, $
+RET
